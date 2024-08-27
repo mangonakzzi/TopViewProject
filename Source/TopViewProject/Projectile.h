@@ -11,17 +11,21 @@ class TOPVIEWPROJECT_API AProjectile : public AActor
 {
 	GENERATED_BODY()
 	
-private:
+public:
 	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* Mesh;
 	UPROPERTY(VisibleAnywhere)
 	class UBoxComponent* Collision;
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	class UProjectileMovementComponent* ProjectileMovementComponent;
 	UPROPERTY(VisibleAnywhere)
 	USceneComponent* SceneComponent;
 	UPROPERTY(VisibleAnywhere)
 	class UArrowComponent* Arrow;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Speed", meta = (ExposeOnSpawn = "true"))
+	float Speed;
+	UPROPERTY(EditAnywhere)
+	class UParticleSystemComponent* Particle;
 
 public:	
 	// Sets default values for this actor's properties
@@ -32,7 +36,7 @@ protected:
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	// Called every frameS
 	virtual void Tick(float DeltaTime) override;
 
 };
