@@ -20,14 +20,17 @@ ATopViewCharacter::ATopViewCharacter()
 		GetMesh()->SetRelativeLocationAndRotation(FVector(0.f, 0.f, -90.f), FRotator(0.f, -90.f, 0.f));
 	}
 
-	Spring = CreateDefaultSubobject<USpringArmComponent>(TEXT("Spring Arm"));
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Main Camera"));
+	Spring = CreateDefaultSubobject<USpringArmComponent>(TEXT("SparingArm"));
 
 	Spring->SetupAttachment(GetCapsuleComponent());
 	Camera->SetupAttachment(Spring);
 
-	Spring->SetRelativeLocation(FVector(0.f, 0.f, 90.f));
-	Spring->bUsePawnControlRotation = true;
+	Spring->TargetArmLength = 1000;	
+	Spring->SetRelativeRotation(FRotator(-70.f, 0.f, 0.f));
+
+	Camera->SetWorldRotation(FRotator(0.f, 0.f, 0.f));
+	Camera->bUsePawnControlRotation = true;
 
 
 }
