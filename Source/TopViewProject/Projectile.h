@@ -14,7 +14,7 @@ class TOPVIEWPROJECT_API AProjectile : public AActor
 public:
 	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* Mesh;
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	class UBoxComponent* Collision;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	class UProjectileMovementComponent* ProjectileMovementComponent;
