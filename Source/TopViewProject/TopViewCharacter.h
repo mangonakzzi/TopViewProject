@@ -31,6 +31,8 @@ public:
 	class USpringArmComponent* Spring;
 	UPROPERTY(VisibleAnywhere)
 	class UCameraComponent* Camera;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	class USceneComponent* Scene;
 
 public:
 

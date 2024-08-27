@@ -5,6 +5,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Camera/CameraComponent.h"
+#include "Components/SceneComponent.h"
 
 // Sets default values
 ATopViewCharacter::ATopViewCharacter()
@@ -27,11 +28,14 @@ ATopViewCharacter::ATopViewCharacter()
 	Camera->SetupAttachment(Spring);
 
 	Spring->TargetArmLength = 1000;	
-	Spring->SetRelativeRotation(FRotator(-70.f, 0.f, 0.f));
+	Spring->SetRelativeLocation(FVector(0.f, 0.f, 90.f));
 
 	Camera->SetWorldRotation(FRotator(0.f, 0.f, 0.f));
 	Camera->bUsePawnControlRotation = true;
 
+	Scene = CreateDefaultSubobject<USceneComponent>(TEXT("Scene"));
+	Scene->SetupAttachment(GetCapsuleComponent());
+	Scene->SetRelativeLocation(FVector(50.f, 0.f, 0.f));
 
 }
 
