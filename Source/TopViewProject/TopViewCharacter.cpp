@@ -46,12 +46,8 @@ ATopViewCharacter::ATopViewCharacter()
 	SceneSpring->bInheritRoll = false;
 	SceneSpring->bInheritYaw = false;
 
-
 	SceneCapture = CreateDefaultSubobject<USceneCaptureComponent2D>(TEXT("SceneCapture"));
 	SceneCapture->SetupAttachment(SceneSpring);
-
-	PaperSprite = CreateDefaultSubobject<UPaperSprite>(TEXT("PaperSprite"));
-	
 
 }
 
