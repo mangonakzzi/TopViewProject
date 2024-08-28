@@ -37,6 +37,8 @@ public:
 	class USceneComponent* Scene;
 	UPROPERTY(VisibleAnywhere)
 	class USceneCaptureComponent2D* SceneCapture;
+	UPROPERTY(VisibleAnywhere)
+	class UPaperSprite* PaperSprite;
 
 public:
 

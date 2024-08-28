@@ -42,9 +42,16 @@ ATopViewCharacter::ATopViewCharacter()
 	SceneSpring->SetupAttachment(GetCapsuleComponent());
 	SceneSpring->SetRelativeRotation(FRotator(-90.f, 0.f, 0.f));
 	SceneSpring->TargetArmLength = 500;
+	SceneSpring->bInheritPitch = false;
+	SceneSpring->bInheritRoll = false;
+	SceneSpring->bInheritYaw = false;
+
 
 	SceneCapture = CreateDefaultSubobject<USceneCaptureComponent2D>(TEXT("SceneCapture"));
 	SceneCapture->SetupAttachment(SceneSpring);
+
+	PaperSprite = CreateDefaultSubobject<UPaperSprite>(TEXT("PaperSprite"));
+	
 
 }
 
