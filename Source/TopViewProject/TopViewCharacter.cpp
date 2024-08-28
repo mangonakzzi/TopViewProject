@@ -39,7 +39,7 @@ ATopViewCharacter::ATopViewCharacter()
 	Scene->SetRelativeLocation(FVector(50.f, 0.f, 0.f));
 
 	SceneSpring = CreateDefaultSubobject<USpringArmComponent>(TEXT("SceneSpring"));
-	SceneSpring->SetupAttachment(GetCapsuleComponent());
+	SceneSpring->SetupAttachment(GetCapsuleComponent());	
 	SceneSpring->SetRelativeRotation(FRotator(-90.f, 0.f, 0.f));
 	SceneSpring->TargetArmLength = 500;
 	SceneSpring->bInheritPitch = false;
