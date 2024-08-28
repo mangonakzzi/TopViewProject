@@ -6,6 +6,7 @@
 #include "Components/CapsuleComponent.h"
 #include "Camera/CameraComponent.h"
 #include "Components/SceneComponent.h"
+#include "Components/SceneCaptureComponent2D.h"
 
 // Sets default values
 ATopViewCharacter::ATopViewCharacter()
@@ -36,6 +37,14 @@ ATopViewCharacter::ATopViewCharacter()
 	Scene = CreateDefaultSubobject<USceneComponent>(TEXT("Scene"));
 	Scene->SetupAttachment(GetCapsuleComponent());
 	Scene->SetRelativeLocation(FVector(50.f, 0.f, 0.f));
+
+	SceneSpring = CreateDefaultSubobject<USpringArmComponent>(TEXT("SceneSpring"));
+	SceneSpring->SetupAttachment(GetCapsuleComponent());
+	SceneSpring->SetRelativeRotation(FRotator(-90.f, 0.f, 0.f));
+	SceneSpring->TargetArmLength = 500;
+
+	SceneCapture = CreateDefaultSubobject<USceneCaptureComponent2D>(TEXT("SceneCapture"));
+	SceneCapture->SetupAttachment(SceneSpring);
 
 }
 
