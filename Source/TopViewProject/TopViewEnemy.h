@@ -10,6 +10,9 @@ UCLASS()
 class TOPVIEWPROJECT_API ATopViewEnemy : public ACharacter
 {
 	GENERATED_BODY()
+	
+public:
+	
 
 public:
 	// Sets default values for this character's properties
