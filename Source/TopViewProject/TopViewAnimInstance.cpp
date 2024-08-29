@@ -50,6 +50,13 @@ void UTopViewAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 		Vertical = UnRotateVector.X;
 		Horizontal = UnRotateVector.Y;
 
+		Rotator = Character->GetBaseAimRotation();
+		FRotator VelocityRotation = UKismetMathLibrary::MakeRotFromX(Velocity);
+
+		FRotator DeltaRotation = VelocityRotation - Rotator;
+		DeltaRotation.Normalize();
+
+		YawOffset = DeltaRotation.Yaw;
 	}
 
 
