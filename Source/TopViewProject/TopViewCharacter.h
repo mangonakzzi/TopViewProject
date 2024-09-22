@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "TopViewCharacter.generated.h"
 
+
 UCLASS()
 class TOPVIEWPROJECT_API ATopViewCharacter : public ACharacter
 {
@@ -27,6 +28,8 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	
 public:
+
+public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	class USpringArmComponent* Spring;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
@@ -39,9 +42,6 @@ public:
 	class USceneCaptureComponent2D* SceneCapture;
 
 public:
-
-	void MoveLeftRight(float Value);
-	void MoveUpDown(float Value);
 	void LookLeftRight(float Value);
 	void LookUpDown(float Value);
 
