@@ -74,6 +74,8 @@ void ATopViewCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
 
 	PlayerInputComponent->BindAxis(TEXT("LookLeftRight"), this, &ATopViewCharacter::LookLeftRight);
 	PlayerInputComponent->BindAxis(TEXT("LookUpDown"), this, &ATopViewCharacter::LookUpDown);
+	PlayerInputComponent->BindAxis(TEXT("MoveUpDown"), this, &ATopViewCharacter::MoveUpDown);
+	PlayerInputComponent->BindAxis(TEXT("MoveLeftRight"), this, &ATopViewCharacter::MoveLeftRight);
 
 	PlayerInputComponent->BindAction(TEXT("Jump"), EInputEvent::IE_Pressed, this, &ATopViewCharacter::Jump);
 }
@@ -85,5 +87,17 @@ void ATopViewCharacter::LookLeftRight(float Value)
 void ATopViewCharacter::LookUpDown(float Value)
 {
 	AddControllerPitchInput(Value);
+
+}
+
+void ATopViewCharacter::MoveUpDown(float value)
+{
+	AddMovementInput(GetActorForwardVector(), value);
+
+}
+
+void ATopViewCharacter::MoveLeftRight(float Value)
+{
+	AddMovementInput(GetActorRightVector(), Value);
 
 }

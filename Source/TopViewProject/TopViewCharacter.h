@@ -20,13 +20,13 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-	
+
 public:
 
 public:
@@ -44,5 +44,7 @@ public:
 public:
 	void LookLeftRight(float Value);
 	void LookUpDown(float Value);
+	void MoveUpDown(float Value);
+	void MoveLeftRight(float Value);
 
 };

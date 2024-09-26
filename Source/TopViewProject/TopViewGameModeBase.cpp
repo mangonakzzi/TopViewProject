@@ -14,5 +14,12 @@ ATopViewGameModeBase::ATopViewGameModeBase()
 
 	}
 
-
+	//static ConstructorHelpers::FClassFinder<ATopViewCharacter> BP_PlayerController(TEXT("/Script/Engine.Blueprint'/Game/BluePrint/BP_PlayerController.BP_PlayerController'"));
+	//
+	//if (BP_PlayerController.Succeeded())
+	//{
+	//	PlayerControllerClass = BP_PlayerController.Class;
+	//
+	//}
+	
 }

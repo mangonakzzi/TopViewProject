@@ -14,7 +14,7 @@ class TOPVIEWPROJECT_API ATopViewGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 
-private:
+public:
 	ATopViewGameModeBase();
 	
 };
