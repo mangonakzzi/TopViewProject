@@ -24,7 +24,7 @@ public:
 	class UArrowComponent* Arrow;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Speed", meta = (ExposeOnSpawn = "true"))
 	float Speed;
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	class UParticleSystemComponent* Particle;
 
 public:	

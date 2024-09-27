@@ -14,4 +14,21 @@ class TOPVIEWPROJECT_API ATopViewCharacterController : public APlayerController
 {
 	GENERATED_BODY()
 	
+
+public:
+	ATopViewCharacterController();
+
+protected:
+	virtual void BeginPlay() override;
+
+public:
+	virtual void SetupInputComponent() override;
+
+public:
+	void LookLeftRight(float Value);
+	void LookUpDown(float Value);
+	void MoveUpDown(float Value);
+	void MoveLeftRight(float Value);
+
+	void Jump();
 };

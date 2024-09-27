@@ -42,9 +42,6 @@ public:
 	class USceneCaptureComponent2D* SceneCapture;
 
 public:
-	void LookLeftRight(float Value);
-	void LookUpDown(float Value);
-	void MoveUpDown(float Value);
-	void MoveLeftRight(float Value);
+
 
 };
