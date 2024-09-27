@@ -7,6 +7,7 @@
 #include "Camera/CameraComponent.h"
 #include "Components/SceneComponent.h"
 #include "Components/SceneCaptureComponent2D.h"
+#include "TopViewCharacterController.h"
 
 // Sets default values
 ATopViewCharacter::ATopViewCharacter()
@@ -72,5 +73,48 @@ void ATopViewCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+	PlayerInputComponent->BindAxis(TEXT("LookLeftRight"), this, &ATopViewCharacter::LookLeftRight);
+	PlayerInputComponent->BindAxis(TEXT("LookUpDown"), this, &ATopViewCharacter::LookUpDown);
+	PlayerInputComponent->BindAxis(TEXT("MoveUpDown"), this, &ATopViewCharacter::MoveUpDown);
+	PlayerInputComponent->BindAxis(TEXT("MoveLeftRight"), this, &ATopViewCharacter::MoveLeftRight);
+
+	PlayerInputComponent->BindAction(TEXT("Jump"), EInputEvent::IE_Pressed, this, &ATopViewCharacter::Jump);
+}
+void ATopViewCharacter::LookLeftRight(float Value)
+{
+	ATopViewCharacterController* LookLeftRightController = Cast<ATopViewCharacterController>(GetController());
+	if (Controller)
+	{
+		LookLeftRightController->LookLeftRight(Value);
+	}
+
+}
+void ATopViewCharacter::LookUpDown(float Value)
+{
+	ATopViewCharacterController* LookUpDownController = Cast<ATopViewCharacterController>(GetController());
+	if (Controller)
+	{
+		LookUpDownController->LookUpDown(Value);
+	}
+
 }
 
+void ATopViewCharacter::MoveUpDown(float Value)
+{
+	ATopViewCharacterController* MoveUpDownController = Cast<ATopViewCharacterController>(GetController());
+	if (Controller)
+	{
+		MoveUpDownController->MoveUpDown(Value);
+	}
+
+}
+
+void ATopViewCharacter::MoveLeftRight(float Value)
+{
+	ATopViewCharacterController* MoveLeftRightController = Cast<ATopViewCharacterController>(GetController());
+	if (Controller)
+	{
+		MoveLeftRightController->MoveLeftRight(Value);
+	}
+
+}

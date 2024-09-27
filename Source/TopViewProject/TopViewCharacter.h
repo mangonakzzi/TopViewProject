@@ -28,8 +28,6 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 public:
-
-public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	class USpringArmComponent* Spring;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
@@ -42,6 +40,9 @@ public:
 	class USceneCaptureComponent2D* SceneCapture;
 
 public:
-
+	void LookLeftRight(float Value);
+	void LookUpDown(float Value);
+	void MoveUpDown(float Value);
+	void MoveLeftRight(float Value);
 
 };

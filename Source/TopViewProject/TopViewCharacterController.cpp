@@ -18,19 +18,6 @@ void ATopViewCharacterController::BeginPlay()
 
 }
 
-void ATopViewCharacterController::SetupInputComponent()
-{
-	Super::SetupInputComponent();
-
-	InputComponent->BindAxis("MoveUpDown", this, &ATopViewCharacterController::MoveUpDown);
-	InputComponent->BindAxis("MoveLeftRight", this, &ATopViewCharacterController::MoveLeftRight);
-	InputComponent->BindAxis("LookUpDown", this, &ATopViewCharacterController::LookUpDown);
-	InputComponent->BindAxis("LookLeftRight", this, &ATopViewCharacterController::LookLeftRight);
-
-	InputComponent->BindAction(TEXT("Jump"), EInputEvent::IE_Pressed, this, &ATopViewCharacterController::Jump);
-
-}
-
 void ATopViewCharacterController::LookLeftRight(float Value)
 {
 	APawn* Controller = GetPawn();

@@ -18,11 +18,8 @@ class TOPVIEWPROJECT_API ATopViewCharacterController : public APlayerController
 public:
 	ATopViewCharacterController();
 
-protected:
-	virtual void BeginPlay() override;
-
 public:
-	virtual void SetupInputComponent() override;
+	virtual void BeginPlay() override;
 
 public:
 	void LookLeftRight(float Value);
