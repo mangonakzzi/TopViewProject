@@ -8,8 +8,6 @@
 
 ATopViewCharacterController::ATopViewCharacterController()
 {
-
-
 }
 
 void ATopViewCharacterController::BeginPlay()
